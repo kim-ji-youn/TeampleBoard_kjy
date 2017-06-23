@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/emptySpace"
+    tools:context="com.jiyoun.teampleboard_kjy.MainActivity">
+
+    <TextView
+        android:id="@+id/titleOfApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:text="팀플보드"
+        android:textSize="70dp"/>
+
+    <EditText
+        android:id="@+id/idInput"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/titleOfApp"
+        android:layout_centerHorizontal="true"
+        android:hint="ID" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/passwordInput"
+        android:layout_centerHorizontal="true"
+        android:hint="PASSWORD"
+        android:inputType="numberPassword"
+        android:layout_below="@+id/idInput"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/passwordInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="loginClicked"
+        android:text="LOG IN" />
+
+    <Button
+        android:id="@+id/signinButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginTop="10dp"
+        android:layout_toStartOf="@+id/searchButton"
+        android:onClick="signinClicked"
+        android:text="SIGN IN" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/passwordInput"
+        android:layout_alignTop="@+id/signinButton"
+        android:onClick="searchClicked"
+        android:text="ID/PW 찾기" />
+
+
+</RelativeLayout>

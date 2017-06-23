@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "296692590645",
+    "firebase_url": "https://teampleboard-41999.firebaseio.com",
+    "project_id": "teampleboard-41999",
+    "storage_bucket": "teampleboard-41999.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296692590645:android:201691f608e26f77",
+        "android_client_info": {
+          "package_name": "com.jiyoun.teampleboard_kjy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296692590645-30pvq59c3lj7caei7bvhgaupjev5ht5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jiyoun.teampleboard_kjy",
+            "certificate_hash": "0562a7730cfae531cceea1bd9b188589a23cd9bd"
+          }
+        },
+        {
+          "client_id": "296692590645-557v1u2h186nqdptav34l6ug1k51oj1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAlOwHvzUA59qtinKuejqWMQLlCGfUvlY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296692590645-557v1u2h186nqdptav34l6ug1k51oj1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
