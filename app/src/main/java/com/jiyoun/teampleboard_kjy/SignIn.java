@@ -36,9 +36,5 @@ public class SignIn extends AppCompatActivity {
         clear = (Button)findViewById(R.id.bt_reset);
         signIn = (Button)findViewById(R.id.bt_signIn);
 
-
-        
-
-
     }
 }
