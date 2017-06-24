@@ -25,7 +25,8 @@
         <activity android:name=".NewTodo" />
         <activity android:name=".KanbanTodo" />
         <activity android:name=".KanbanDoing" />
-        <activity android:name=".KanbanDone"></activity>
+        <activity android:name=".KanbanDone" />
+        <activity android:name=".DataService"></activity>
     </application>
 
 </manifest>
