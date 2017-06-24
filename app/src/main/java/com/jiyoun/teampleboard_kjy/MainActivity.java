@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     InputMethodManager imm;
     EditText idInput;
@@ -19,11 +21,18 @@ public class MainActivity extends AppCompatActivity {
     Button searchButton;
     RelativeLayout emptySpace;
 
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         idInput = (EditText)findViewById(R.id.idInput);
@@ -38,8 +47,10 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ProjectMain.class);
-                startActivity(intent);
+
+
+                //Intent intent = new Intent(getApplicationContext(),ProjectMain.class);
+                //startActivity(intent);
             }
         });
 
@@ -74,5 +85,17 @@ public class MainActivity extends AppCompatActivity {
     private void hideKeyboard() {
         imm.hideSoftInputFromWindow(idInput.getWindowToken(),0);
         imm.hideSoftInputFromWindow(passwordInput.getWindowToken(),0);
+    }
+
+    public void onStart(){
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    public void onStop() {
+        super.onStop();
+        if(mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }

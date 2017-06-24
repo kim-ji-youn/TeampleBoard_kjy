@@ -34,12 +34,13 @@ public class NewProject extends AppCompatActivity {
         setContentView(R.layout.activity_new_project);
 
         editText = (EditText)findViewById(R.id.new_project_name);
-        name = editText.getText().toString();
+
 
         bt_newProject = (Button)findViewById(R.id.bt_newProject);
         bt_newProject.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                name = editText.getText().toString();
                 Intent intent = new Intent(NewProject.this,ProjectMain.class);
                 intent.putExtra("name", name);
                 intent.putExtra("date", selectedDate);

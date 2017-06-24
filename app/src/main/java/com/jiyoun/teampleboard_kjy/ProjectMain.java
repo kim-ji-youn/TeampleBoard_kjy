@@ -31,7 +31,7 @@ public class ProjectMain extends AppCompatActivity {
         listView.setAdapter(adapter);
         adapter.addItem(name,date);
 
-        //여기부터
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -39,7 +39,7 @@ public class ProjectMain extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //여기까지 아이템 클릭
+
 
         button = (Button)findViewById(R.id.newProject);
         button.setOnClickListener(new View.OnClickListener() {

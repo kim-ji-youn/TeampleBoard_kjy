@@ -34,12 +34,15 @@ public class resetPW extends AppCompatActivity {
         resetNewPw = (Button)findViewById(R.id.bt_resetNewPw);
         emptySpace = (RelativeLayout)findViewById(R.id.emptySpace);
 
-        newPw = pw.getText().toString();
-        chkNewPw = chkPw.getText().toString();
+
 
         resetNewPw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                newPw = pw.getText().toString();
+                chkNewPw = chkPw.getText().toString();
+
                 if(newPw.equals(chkNewPw)) {
                     showTrueMessage();
                 }
