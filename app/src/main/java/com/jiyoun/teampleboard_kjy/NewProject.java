@@ -1,8 +1,10 @@
 package com.jiyoun.teampleboard_kjy;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,6 +16,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Date;
+
+import static com.jiyoun.teampleboard_kjy.MainActivity.members;
 
 public class NewProject extends AppCompatActivity {
 
@@ -64,12 +68,24 @@ public class NewProject extends AppCompatActivity {
                 int count;
                 count = adapter.getCount();
 
-                EditText editText = (EditText)findViewById(R.id.input_member_id);
+                editText = (EditText)findViewById(R.id.input_member_id);
                 String memberId = editText.getText().toString();
+                int index = -1;
+                for(int i = 0; i<members.size(); i++) {
+                    if(memberId.equals(members.get(i).id)) {
+                        index = i;
+                    }
+                }
 
-                items.add(memberId);
-                adapter.notifyDataSetChanged();
-                editText.setText("");
+                if(index == -1) {
+                    showMessage();
+                }
+                else {
+                    items.add(memberId);
+                    adapter.notifyDataSetChanged();
+                    editText.setText("");
+                }
+
             }
         });
 
@@ -120,4 +136,21 @@ public class NewProject extends AppCompatActivity {
     void updateNow() {
         date.setText(selectedDate);
     }
+
+    private  void showMessage() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("없는 ID 입니다. ");
+        builder.setMessage("팀원의 ID를 다시 확인해주세요. ");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                editText.setText("");
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 }
