@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.Date;
 
+
 public class NewTodo extends AppCompatActivity {
 
     Button bt_date;
@@ -21,6 +22,9 @@ public class NewTodo extends AppCompatActivity {
     EditText editText;
     String name;
     int mYear, mMonth, mDay;
+    Todo todo;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +33,13 @@ public class NewTodo extends AppCompatActivity {
 
 
         editText = (EditText)findViewById(R.id.todo_name);
-        name = editText.getText().toString();
+
 
         bt_newTodo = (Button)findViewById(R.id.bt_newTodo);
         bt_newTodo.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
+                name = editText.getText().toString();
                 Intent intent = new Intent(NewTodo.this,KanbanTodo.class);
                 intent.putExtra("todo_name", name);
                 intent.putExtra("todo_date", selectedDate);

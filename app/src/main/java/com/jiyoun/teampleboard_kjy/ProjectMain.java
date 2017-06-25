@@ -23,7 +23,7 @@ public class ProjectMain extends AppCompatActivity {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         String date = intent.getStringExtra("date");
-        date = date + " 까지";
+
 
         adapter = new ListViewAdapter();
 
