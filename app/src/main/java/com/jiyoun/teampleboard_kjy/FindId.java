@@ -36,6 +36,9 @@ public class FindId extends AppCompatActivity {
                     if(inputName.equals(members.get(i).name)&&inputIdNumber.equals(members.get(i).idNumber)) {
                         showId(i);
                     }
+                    else{
+                        showInfo();
+                    }
                 }
 
             }
@@ -66,6 +69,29 @@ public class FindId extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(getApplicationContext(),FindPw.class);
+                startActivity(intent);
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("가입해주세요. ");
+        builder.setMessage("가입되어 있지 않습니다. ");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+        builder.setPositiveButton("메인으로", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("가입하기", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getApplicationContext(),SignIn.class);
                 startActivity(intent);
             }
         });

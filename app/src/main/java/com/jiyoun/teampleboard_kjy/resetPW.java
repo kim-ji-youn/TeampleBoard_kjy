@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import static com.jiyoun.teampleboard_kjy.FindPw.findPwMember;
+import static com.jiyoun.teampleboard_kjy.MainActivity.members;
+
 public class resetPW extends AppCompatActivity {
 
     InputMethodManager imm;
@@ -44,6 +47,7 @@ public class resetPW extends AppCompatActivity {
                 chkNewPw = chkPw.getText().toString();
 
                 if(newPw.equals(chkNewPw)) {
+                    members.get(findPwMember).password = newPw;
                     showTrueMessage();
                 }
                 else if(newPw.length() == 0) {
